@@ -1,9 +1,7 @@
 
-Feature: Test1
+Feature: Demo Home
 
-  Scenario: Test2
+  Scenario: Launch the Website and go to Demo Home
 
-    Given user launches HakerRank
-    And user "ABC" is logged in using password "Test@"
-    Then verify user is logged in successfully
-    When user clicks on "" tab
+    Given user launches seleniumeasy website
+    And verify user is on homepage
