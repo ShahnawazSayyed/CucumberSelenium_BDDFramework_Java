@@ -1,22 +1,23 @@
 package stepDefinitions;
 
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.Assert;
-import org.openqa.selenium.By;
+
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import pageObjects.Common;
+import pageObjects.Homepage;
 
 
 public class Steps {
 
     WebDriver driver;
+    Homepage home;
+    Common common;
 
     @Given("chrome browser launched")
     public void chromeBrowserLaunched() {
@@ -33,20 +34,17 @@ public class Steps {
 
     @And("user launches seleniumeasy website")
     public void userLaunchSeleniumEasyWebsite() {
-
-        driver.get("https://www.seleniumeasy.com/test");
-        boolean p = driver.findElement(By.id("at-cv-lightbox-close")).isDisplayed();
-        if (p){
-            driver.findElement(By.id("at-cv-lightbox-close")).click();
-        }
+        home = new Homepage(driver);
+        home.navigateTo_HomePage("https://www.seleniumeasy.com/test");
+        home.close_launchAlert();
 
     }
 
     @And("verify user is on homepage")
     public void verifyUserIsOnHomepage() {
-        String title = "Selenium Easy - Best Demo website to practice Selenium Webdriver Online";
-        String t = driver.getTitle();
-        Assert.assertEquals(t, title);
+        common = new Common(driver);
+        common.assert_title("Selenium Easy - Best Demo website to practice Selenium Webdriver Online");
+
     }
 
 }
