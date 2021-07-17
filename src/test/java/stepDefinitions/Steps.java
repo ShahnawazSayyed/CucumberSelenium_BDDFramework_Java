@@ -18,13 +18,22 @@ public class Steps {
 
     WebDriver driver;
 
-    @Given("user launches seleniumeasy website")
-    public void userLaunchSeleniumEasyWebsite() {
+    @Given("chrome browser launched")
+    public void chromeBrowserLaunched() {
         System.setProperty("webdriver.chrome.driver","src\\main\\resources\\webDrivers\\chromedriver.exe");
-
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    }
+
+    @Then("quit browser")
+    public void quitBrowser(){
+        driver.quit();
+    }
+
+    @And("user launches seleniumeasy website")
+    public void userLaunchSeleniumEasyWebsite() {
+
         driver.get("https://www.seleniumeasy.com/test");
         boolean p = driver.findElement(By.id("at-cv-lightbox-close")).isDisplayed();
         if (p){
@@ -39,4 +48,5 @@ public class Steps {
         String t = driver.getTitle();
         Assert.assertEquals(t, title);
     }
+
 }
