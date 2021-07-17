@@ -1,37 +1,29 @@
 package stepDefinitions;
 
-import java.util.concurrent.TimeUnit;
-
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 
-import managers.FileReaderManager;
 import managers.PageObjectManager;
+import managers.WebDriverManager;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import pageObjects.CommonFeatures;
 import pageObjects.HomePage;
-import dataProviders.ConfigFileReader;
 
 
 public class Steps {
 
-    ConfigFileReader properties;
     WebDriver driver;
     PageObjectManager objectManager;
     HomePage homePage;
     CommonFeatures common;
+    WebDriverManager webDriverManager;
 
     @Given("launch chrome browser")
     public void launchChromeBrowser() {
 
-        properties = new ConfigFileReader();
-        System.setProperty("webdriver.chrome.driver",FileReaderManager.getInstance().getConfigReader().getDriverPath());
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(FileReaderManager.getInstance().getConfigReader().getImplicitlyWait(), TimeUnit.SECONDS);
-
+        webDriverManager = new WebDriverManager();
+        driver = webDriverManager.getDriver();
         objectManager = new PageObjectManager(driver);
         homePage = objectManager.getHomePage();
         common = objectManager.getCommonFeatures();
