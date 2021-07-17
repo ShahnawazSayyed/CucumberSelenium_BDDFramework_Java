@@ -11,21 +11,25 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pageObjects.Common;
 import pageObjects.HomePage;
+import dataProvider.ConfigFileReader;
 
 
 public class Steps {
 
+    ConfigFileReader properties;
     WebDriver driver;
     PageObjectManager objectManager;
     HomePage homePage;
     Common common;
 
     @Given("launch chrome browser")
-    public void chromeBrowserLaunched() {
-        System.setProperty("webdriver.chrome.driver","src\\main\\resources\\webDrivers\\chromedriver.exe");
+    public void launchChromeBrowser() {
+
+        properties = new ConfigFileReader();
+        System.setProperty("webdriver.chrome.driver",properties.getDriverPath());
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(properties.getImplicitlyWait(), TimeUnit.SECONDS);
 
         objectManager = new PageObjectManager(driver);
         homePage = objectManager.getHomePage();
@@ -39,7 +43,7 @@ public class Steps {
 
     @And("user launches seleniumeasy website")
     public void userLaunchSeleniumEasyWebsite() {
-        homePage.navigateTo_HomePage("https://www.seleniumeasy.com/test");
+        homePage.navigateTo_HomePage(properties.getApplicationUrl());
         homePage.close_launchAlert();
 
     }
