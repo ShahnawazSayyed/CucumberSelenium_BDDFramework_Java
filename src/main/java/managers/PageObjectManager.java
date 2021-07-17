@@ -1,21 +1,21 @@
 package managers;
 
 import org.openqa.selenium.WebDriver;
-import pageObjects.Common;
 import pageObjects.HomePage;
+import pageObjects.CommonFeatures;
 
 public class PageObjectManager {
 
     private WebDriver driver;
     private HomePage homePage;
-    private Common common;
+    private CommonFeatures common;
 
     public PageObjectManager(WebDriver driver){
         this.driver = driver;
     }
 
-    public Common getCommon(){
-        return (common == null) ? common = new Common(driver) : common;
+    public CommonFeatures getCommonFeatures(){
+        return (common == null) ? common = new CommonFeatures(driver) : common;
     }
 
     public HomePage getHomePage(){

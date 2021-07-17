@@ -1,21 +1,17 @@
 package pageObjects;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.PageFactory;
 import org.junit.Assert;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
 
-import java.util.concurrent.TimeUnit;
-
-public class Common {
+public class CommonFeatures {
 
     WebDriver driver;
 
-    public Common(WebDriver driver) {
+    public CommonFeatures(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
-
 
     public void assert_title(String title) {
         String t = driver.getTitle();
