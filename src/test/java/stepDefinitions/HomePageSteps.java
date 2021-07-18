@@ -10,13 +10,13 @@ import pageObjects.Common;
 import pageObjects.HomePage;
 
 
-public class HomepageSteps {
+public class HomePageSteps {
 
     HomePage homePage;
     Common common;
     TestContext testContext;
 
-    public HomepageSteps(TestContext context) {
+    public HomePageSteps(TestContext context) {
         testContext = context;
         common = testContext.getPageObjectManager().getCommonFeatures();
         homePage = testContext.getPageObjectManager().getHomePage();
