@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="6" time="104.579">
-<testcase classname="Demo Home" name="Launch the Website and go to Demo Home" time="36.379">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="6" time="77.192">
+<testcase classname="Demo Home" name="Launch the Website and go to Demo Home" time="12.195">
 <system-out><![CDATA[Given user launches seleniumeasy website....................................passed
 Then verify user is on homepage.............................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Demo Home" name="Navigate to Selenium Easy Demo - Start Practising" time="8.732">
+<testcase classname="Demo Home" name="Navigate to Selenium Easy Demo - Start Practising" time="8.744">
 <system-out><![CDATA[Given user launches seleniumeasy website....................................passed
 Then verify user is on homepage.............................................passed
 When user click on "Start Practicing" button................................passed
 Then verify basic examples displayed on homepage............................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Data Driven Testing Using Examples Keyword" name="Input Text and click Show Message then Verify Text in Simple Form" time="15.972">
+<testcase classname="Data Driven Testing Using Examples Keyword" name="Input Text and click Show Message then Verify Text in Simple Form" time="23.525">
 <system-out><![CDATA[Given launch browser........................................................passed
 Given user launches seleniumeasy website....................................passed
 Then verify user is on homepage.............................................passed
@@ -26,7 +26,7 @@ And click on show message...................................................pass
 Then verify "Hello World"...................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Data Driven Testing Using Examples Keyword" name="Input Text and click Show Message then Verify Text in Simple Form 2" time="14.656">
+<testcase classname="Data Driven Testing Using Examples Keyword" name="Input Text and click Show Message then Verify Text in Simple Form 2" time="12.754">
 <system-out><![CDATA[Given launch browser........................................................passed
 Given user launches seleniumeasy website....................................passed
 Then verify user is on homepage.............................................passed
@@ -40,7 +40,7 @@ And click on show message...................................................pass
 Then verify "This is keyword driven test1"..................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Data Driven Testing Using Examples Keyword" name="Input number a, number b and click Get Total then Verify Text in Simple Form" time="13.231">
+<testcase classname="Data Driven Testing Using Examples Keyword" name="Input number a, number b and click Get Total then Verify Text in Simple Form" time="9.487">
 <system-out><![CDATA[Given launch browser........................................................passed
 Given user launches seleniumeasy website....................................passed
 Then verify user is on homepage.............................................passed
@@ -55,7 +55,7 @@ When click on show message..................................................pass
 Then verify Total "2" + "3".................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Data Driven Testing Using Examples Keyword" name="Input number a, number b and click Get Total then Verify Text in Simple Form 2" time="15.015">
+<testcase classname="Data Driven Testing Using Examples Keyword" name="Input number a, number b and click Get Total then Verify Text in Simple Form 2" time="9.797">
 <system-out><![CDATA[Given launch browser........................................................passed
 Given user launches seleniumeasy website....................................passed
 Then verify user is on homepage.............................................passed

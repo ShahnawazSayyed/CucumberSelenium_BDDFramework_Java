@@ -2,7 +2,11 @@ package stepDefinitions;
 
 import cucumber.TestContext;
 import io.cucumber.java.After;
+import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 
 
 public class Hooks {
@@ -10,6 +14,7 @@ public class Hooks {
     TestContext testContext;
 
     public Hooks(TestContext context) {
+
         testContext = context;
     }
 
@@ -31,6 +36,24 @@ public class Hooks {
 
         testContext.getWebDriverManager().closeDriver();
         System.out.println("Web Browser closed");
+    }
+
+    //Enable below tag if screenshot need to be captured for all steps
+    //@AfterStep
+    public void addStepScreenshot(Scenario scenario){
+
+        final byte[] screenshot = ((TakesScreenshot) testContext.getWebDriverManager().getDriver()).getScreenshotAs(OutputType.BYTES);
+        scenario.attach(screenshot, "image/png", "image");
+
+    }
+
+    //Enable below tag if screenshot need to be captured for failed steps
+    @AfterStep
+    public void addFailScreenshot(Scenario scenario){
+
+        final byte[] screenshot = ((TakesScreenshot) testContext.getWebDriverManager().getDriver()).getScreenshotAs(OutputType.BYTES);
+        scenario.attach(screenshot, "image/png", "image");
+
     }
 
 }
