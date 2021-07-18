@@ -36,3 +36,4 @@ Feature: Data Driven Testing Using Examples Keyword
 
       |number a|number b|
       |2|3|
+      |200.25|300.50|

@@ -1,12 +1,8 @@
 package pageObjects;
 
-
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
-
-import java.lang.reflect.Type;
 
 public class SimpleFormDemo {
 

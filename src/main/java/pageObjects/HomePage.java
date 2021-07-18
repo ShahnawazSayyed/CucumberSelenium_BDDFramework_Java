@@ -1,6 +1,5 @@
 package pageObjects;
 
-import dataProviders.ConfigFileReader;
 import managers.FileReaderManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
