@@ -22,10 +22,11 @@ public class HomepageSteps {
         homePage = testContext.getPageObjectManager().getHomePage();
     }
 
-    @And("user launches seleniumeasy website")
+    @Given("user launches seleniumeasy website")
     public void userLaunchSeleniumEasyWebsite() {
         homePage.navigateTo_HomePage();
         homePage.close_launchAlert();
+        System.out.println("Homepage Loaded successfully");
 
     }
 

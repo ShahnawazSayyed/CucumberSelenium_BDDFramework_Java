@@ -22,12 +22,7 @@ public class CommonSteps {
     public void launchBrowser() {
 
         driver = testContext.getWebDriverManager().getDriver();
-    }
-
-    @Then("quit browser")
-    public void quitBrowser(){
-
-        driver.quit();
+        System.out.println("Browser launched successfully");
     }
 
     @When("user click on {string} button")
