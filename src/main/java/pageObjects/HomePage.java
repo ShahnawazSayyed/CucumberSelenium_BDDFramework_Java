@@ -21,11 +21,10 @@ public class HomePage {
         driver.get(FileReaderManager.getInstance().getConfigReader().getApplicationUrl());
     }
 
-    public void close_launchAlert(){
+    public void close_launchAlert() {
         WebElement launchPopup = driver.findElement(By.id("at-cv-lightbox-close"));
-        if (launchPopup.isEnabled()){
+        if (launchPopup.isEnabled()) {
             driver.findElement(By.id("at-cv-lightbox-close")).click();
         }
-
     }
 }

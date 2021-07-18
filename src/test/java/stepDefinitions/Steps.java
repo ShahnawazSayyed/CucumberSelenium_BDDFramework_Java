@@ -4,10 +4,11 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 
+import io.cucumber.java.en.When;
 import managers.PageObjectManager;
 import managers.WebDriverManager;
 import org.openqa.selenium.WebDriver;
-import pageObjects.CommonFeatures;
+import pageObjects.Common;
 import pageObjects.HomePage;
 
 
@@ -16,7 +17,7 @@ public class Steps {
     WebDriver driver;
     PageObjectManager objectManager;
     HomePage homePage;
-    CommonFeatures common;
+    Common common;
     WebDriverManager webDriverManager;
 
     @Given("launch chrome browser")
@@ -44,8 +45,19 @@ public class Steps {
     @And("verify user is on homepage")
     public void verifyUserIsOnHomepage() {
 
-        //common.assert_title("Selenium Easy - Best Demo website to practice Selenium Webdriver Online");
+        common.assert_title("Selenium Easy - Best Demo website to practice Selenium Webdriver Online");
 
     }
 
+    @When("user click on {string} button")
+    public void userClickOnButton(String btnName) {
+
+        common.clickOnButton();
+    }
+
+    @Then("verify basic examples displayed on homepage")
+    public void verifyBasicExamplesDisplayedOnHomepage() {
+
+        common.assert_text("BASIC EXAMPLES TO START WITH SELENIUM");
+    }
 }
